@@ -51,7 +51,8 @@
 ***
 
 
-- <p id='p2'/>
+<p id='p2'/>
+
 ## 2. Rotate an Array to left by 'd' steps
 
  **Solution: 1**
@@ -105,7 +106,8 @@
 ***
 
 
-- <p id='p3'/>
+<p id='p3'/>
+
 ## 3. Move all zero to the end of Array
 
  <!-- **Solution: 1** -->
@@ -124,7 +126,8 @@
 ***
 
 
-- <p id='p4'/>
+<p id='p4'/>
+
 ## 4. Union of 2 sorted Array
 
 **If there is no duplicate element**
@@ -193,7 +196,8 @@
 ***
 
 
-- <p id='p5'/>
+<p id='p5'/>
+
 ## 5. Intersection of 2 sorted Array
 
  <!-- **If there are Duplicate elements** -->
@@ -222,7 +226,8 @@
 ***
 
 
-- <p id='p6'/>
+<p id='p6'/>
+
 ## 6. Find missing number
 
  **Summation Method**
@@ -255,7 +260,8 @@
 ***
 
 
-- <p id='p7'/>
+<p id='p7'/>
+
 ## 7. Maximum subarray sum
 
  **Brute Force**
@@ -296,7 +302,8 @@
 ***
 
 
-- <p id='p8'/>
+<p id='p8'/>
+
 ## 8. Longest Subarray with given Sum K
 - [Problem(Positive)](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399)
 - [Problem(Negative)](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_5713505)
