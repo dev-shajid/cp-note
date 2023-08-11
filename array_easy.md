@@ -1,20 +1,16 @@
 # Basic Problem with Array
 
-- [Easy](#easy)
-    - [1. Remove Duplicate](#p1)
-    - [2. Rotate an Array to left by 'd' steps](#p2)
-    - [3. Move all zero to the end of Array](#p3)
-    - [4. Union of 2 sorted Array](#p4)
-    - [5. Intersection of 2 sorted Array](#p5)
-    - [6. Find missing number](#p6)
-    - [7. Maximum subarray sum](#p7)
-    - [8. Longest Subarray with given Sum K](#p8)
-- [Medium](#medium)
-- [Hard](#hard)
+- [1. Remove Duplicate](#p1)
+- [2. Rotate an Array to left by 'd' steps](#p2)
+- [3. Move all zero to the end of Array](#p3)
+- [4. Union of 2 sorted Array](#p4)
+- [5. Intersection of 2 sorted Array](#p5)
+- [6. Find missing number](#p6)
+- [7. Two Sum](#p7)
 
-<a id="easy"></a>
 
-- <p id='p1'/>
+<p id='p1'/>
+
 ## 1. Remove Duplicate 
  **Brute Force Solution**
  ```c++
@@ -259,124 +255,63 @@
 
 ***
 
-
 <p id='p7'/>
 
-## 7. Maximum subarray sum
+## 7. Two Sum
+* [Problem](https://leetcode.com/problems/two-sum/)
 
  **Brute Force**
  ```c++
-    int n=8;
-    int arr[]={1,-2,4,3,-2,1,-4,6};
-    int mx=0;
-    
-    for(int i=0; i<n; i++){
-        int s=0;
-        for(int j=i; j<n; j++) s+=arr[j], mx=max(mx,s);
-    }
-    cout << mx << endl;
- ```
-> * **Time Complexity:** O(n^2)
-> * **Space Complexity:** O(1)
-
->***Here summation may be overflow for large integer, xor method is more optimal solution than the first one***
----
- **Optimal Solution:**
- ```c++
-    int n=8;
-    int arr[]={1,-2,4,3,-2,1,-4,6};
-    int mx=0, s=0;
-    
-    for(int i=0; i<n; i++){
-        int s+=arr[i];
-        mx=max(mx,s);
-        if(s<0) s=0;
-    }
-    cout << mx << endl;
- ```
-> * **Time Complexity:** O(n)
-> * **Space Complexity:** O(1)
-
->***Here summation may be overflow for large integer, xor method is more optimal solution than the first one***
-
-***
-
-
-<p id='p8'/>
-
-## 8. Longest Subarray with given Sum K
-- [Problem(Positive)](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399)
-- [Problem(Negative)](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_5713505)
-
- **Brute Force**
- ```c++
-    int n=7, k=3;
-    int arr[]={1,2,3,1,1,1,1};
-    int len=0;
-    
-    for(int i=0; i<n; i++){
-        int s=0;
-        for(int j=i; j<n; j++) {
-            s+=arr[j];
-            if (s == k) len = max(len, j - i + 1);
+    vector<int> twoSum(vector<int>& nums, int k) {
+        for(int i=0; i<nums.size()-1; i++){
+            for(int j=i+1; j<nums.size(); j++){
+                if(nums[i]+nums[j]==k) return {i,j};
+            }
         }
+        return 0;
     }
-    cout << len << endl; // 3
  ```
 > * **Time Complexity:** O(n^2)
+> * **Space Complexity:** O(2)
+
+<!-- >****** -->
+---
+ **Optimal Solution(Hashmap)**
+ ```c++
+    vector<int> twoSum(vector<int>& nums, int k) {
+        unordered_map<int,int> m;
+        for(int i=0; i<nums.size(); i++){
+            int c=k-nums[i];
+            if(m.count(c)) return {m[c], i};
+            m[nums[i]]=i;
+        }
+        return {};
+    }
+ ```
+> * ***Time Complexity:*** O(n^2) or O(nlogn)
+> * ***Space Complexity:*** O(1)
+
+***map o(nlogn)</br>unordered_map o(n^2)***
+
+---
+ **Optimal Solution(2 Pointer)**
+ ```c++
+    vector<int> twoSum(vector<int>& nums, int k) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size(), l=0, r=n-1;
+        while (l<r){
+            long sum =  nums[l] + nums[r];
+            if(sum == k ) break;
+            else if(sum > k ) --r; //move right pointer to left
+            else ++l; //if sum is less than K then move the left pointer to right
+        }
+
+        return {l,r};
+    }
+ ```
+> * **Time Complexity:** O(n) + O(nlogn)
 > * **Space Complexity:** O(1)
 
->***Here we are calculating sum of every subarray can be formmed form the given array.***
----
- **Better Approach(Using Hashing):**
- ```c++
-    int n=7, k=7;
-    int arr[]={3,4,3,-3,2,1,-3};
-    map<int,int> m;
-    int ans=0, sum=0;
-    for(int i=0; i<n; i++){
-        sum+=arr[i];
-        if(sum==k) ans=i+1;
-        else if(m.count(sum-k)) ans=max(ans,i-m[sum-k]);
-        else if(!m.count(sum)) m[sum]=i;
-    }
-    cout << ans << endl; // 7
- ```
-> * **Time Complexity:** O(nlogn)
-> * **Space Complexity:** O(n)
-
->![Alt](https://takeuforward.org/wp-content/uploads/2023/04/Screenshot-2023-04-13-004939.png)
->![Alt](https://takeuforward.org/wp-content/uploads/2023/04/Screenshot-2023-04-13-005443.png)
----
- **Optimal Solution:**
- ```c++
-    int n=8;
-    int arr[]={1,-2,4,3,-2,1,-4,6};
-    int mx=0, s=0;
-    
-    for(int i=0; i<n; i++){
-        int s+=arr[i];
-        mx=max(mx,s);
-        if(s<0) s=0;
-    }
-    cout << mx << endl;
- ```
-> * **Time Complexity:** O(n)
-> * **Space Complexity:** O(1)
-
->***Here summation may be overflow for large integer, xor method is more optimal solution than the first one***
+***For sorting o(nlogn) & for while loop o(n)***
 
 ***
-
-
-
-<div id="medium"/>
-
-
-
-
-
-
-
-
-<div id="hard"/>
