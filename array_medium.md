@@ -2,6 +2,7 @@
 
 - [1. Maximum subarray sum](#p1)
 - [2. Longest Subarray with given Sum K](#p2)
+- [3. Rearrange Array Elements by Sign](#p3)
 
 
 
@@ -118,6 +119,73 @@
 > * **Space Complexity:** O(1)
 
 >***This code will not work for the array consisting negative elements***
+
+***
+
+
+
+<p id='p3'/>
+
+## 3. Rearrange Array Elements by Sign
+- [Problem-codingninjas](https://www.codingninjas.com/studio/problems/alternate-numbers_6783445)
+- [Problem-leetcode](https://leetcode.com/problems/rearrange-array-elements-by-sign)
+
+ **Brute Force**
+ ```c++
+    vector<int> rearrangeArray(vector<int>& v) {
+        int n=v.size(), p=0, n=0;
+        vector<int> p_e, n_e;
+        for(auto i:v){
+            if(i<0) n_e.push_back(i);
+            else p_e.push_back(i);
+        }
+
+        for(int i=0; i<m/2; i++){
+            v[2*i]=p_e[i];
+            v[2*i+1]=n_e[i];
+        }
+
+        return v;
+    }
+ ```
+> * **Time Complexity:** O(n)+O(n)
+> * **Space Complexity:** O(n)
+---
+
+ **Optimal-1**
+ ```c++
+    vector<int> rearrangeArray(vector<int>& v) {
+        int m=v.size(), p=0, n=1;
+        vector<int> ans(m);
+        for(auto i:v){
+            if(i>=0) ans[p]=i, p+=2;
+            else ans[n]=i, n+=2;
+        }
+        return ans;
+    }
+ ```
+> * **Time Complexity:** O(n)
+> * **Space Complexity:** O(n)
+---
+
+ **Optimal-2**
+ ```c++
+    vector<int> rearrangeArray(vector<int>& v) {
+        vector<int> ans;
+        int m=v.size(), p=0, n=0;
+        while(p<m && n<m){
+            if(v[p]<0) p++; // find the index of next positive element
+            if(v[n]>0) n++; // find the index of next negative element
+            // Push both pos & neg element in ans when they are found and increase their index
+            if(v[p]>0 && v[n]<0) ans.push_back(v[p++]), ans.push_back(v[n++]);
+            
+        }
+
+        return ans;
+    }
+ ```
+> * **Time Complexity:** O(n)
+> * **Space Complexity:** O(n)
 
 ***
 
