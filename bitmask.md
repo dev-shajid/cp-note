@@ -1,5 +1,7 @@
 # Bit Manipulation
 
+[LeetCode Article-Bitmask](https://leetcode.com/discuss/study-guide/3901862/All-Types-of-Patterns-for-Bits-Manipulations-and-How-to-use-it)
+
 ## Count Set Bit
 ```cpp
 int countSetBit(int n) {

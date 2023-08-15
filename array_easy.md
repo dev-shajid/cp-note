@@ -1,5 +1,9 @@
 # Basic Problem with Array
 
+>- [LeetCode Article - Sliding Window](https://leetcode.com/discuss/study-guide/3722472sliding-window-technique-a-comprehensive-guide)
+>- [LeetCode Article - 25 variation of two sum](https://leetcode.com/discuss/interview-question/3685049/25-variations-of-two-sum-question)
+
+### Problem
 - [1. Remove Duplicate](#p1)
 - [2. Rotate an Array to left by 'd' steps](#p2)
 - [3. Move all zero to the end of Array](#p3)
@@ -12,6 +16,11 @@
 <p id='p1'/>
 
 ## 1. Remove Duplicate 
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+
+
  **Brute Force Solution**
  ```c++
     int arr[]={1,1,1,2,2,2,2,3,3,3,4};
@@ -50,6 +59,9 @@
 <p id='p2'/>
 
 ## 2. Rotate an Array to left by 'd' steps
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/rotate-array/)
 
  **Solution: 1**
  ```c++
@@ -105,6 +117,9 @@
 <p id='p3'/>
 
 ## 3. Move all zero to the end of Array
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/move-zeroes/)
 
  <!-- **Solution: 1** -->
  ```c++
@@ -125,6 +140,9 @@
 <p id='p4'/>
 
 ## 4. Union of 2 sorted Array
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/two-sum/)
 
 **If there is no duplicate element**
 
@@ -195,6 +213,9 @@
 <p id='p5'/>
 
 ## 5. Intersection of 2 sorted Array
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/intersection-of-two-arrays/)
 
  <!-- **If there are Duplicate elements** -->
  ```c++
@@ -225,6 +246,11 @@
 <p id='p6'/>
 
 ## 6. Find missing number
+
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/missing-number/)
+
 
  **Summation Method**
  ```c++
@@ -258,7 +284,9 @@
 <p id='p7'/>
 
 ## 7. Two Sum
-* [Problem](https://leetcode.com/problems/two-sum/)
+* [Problem 
+    <img align="center" height="15" src="https://leetcode.com/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png">
+](https://leetcode.com/problems/two-sum/)
 
  **Brute Force**
  ```c++
